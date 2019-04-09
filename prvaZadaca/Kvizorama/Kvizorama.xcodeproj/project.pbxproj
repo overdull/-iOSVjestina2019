@@ -3,17 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		6471A9FB224FF231002A758A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6471A9FA224FF231002A758A /* AppDelegate.swift */; };
-		6471A9FD224FF231002A758A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6471A9FC224FF231002A758A /* ViewController.swift */; };
-		6471AA00224FF231002A758A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6471A9FE224FF231002A758A /* Main.storyboard */; };
 		6471AA02224FF233002A758A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6471AA01224FF233002A758A /* Assets.xcassets */; };
 		6471AA05224FF233002A758A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6471AA03224FF233002A758A /* LaunchScreen.storyboard */; };
 		6471AA10224FF233002A758A /* KvizoramaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6471AA0F224FF233002A758A /* KvizoramaTests.swift */; };
 		6471AA1B224FF233002A758A /* KvizoramaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6471AA1A224FF233002A758A /* KvizoramaUITests.swift */; };
+		6471AA3822502460002A758A /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6471AA3622502460002A758A /* QuizViewController.swift */; };
+		6471AA3922502460002A758A /* QuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6471AA3722502460002A758A /* QuizViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +36,6 @@
 /* Begin PBXFileReference section */
 		6471A9F7224FF231002A758A /* Kvizorama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kvizorama.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6471A9FA224FF231002A758A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6471A9FC224FF231002A758A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6471A9FF224FF231002A758A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6471AA01224FF233002A758A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6471AA04224FF233002A758A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6471AA06224FF233002A758A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +45,8 @@
 		6471AA16224FF233002A758A /* KvizoramaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KvizoramaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6471AA1A224FF233002A758A /* KvizoramaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KvizoramaUITests.swift; sourceTree = "<group>"; };
 		6471AA1C224FF233002A758A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6471AA3622502460002A758A /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		6471AA3722502460002A758A /* QuizViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +97,11 @@
 		6471A9F9224FF231002A758A /* Kvizorama */ = {
 			isa = PBXGroup;
 			children = (
+				6471AA3122502078002A758A /* Controllers */,
+				6471AA2A224FF41A002A758A /* Views */,
+				6471AA29224FF3FF002A758A /* Services */,
+				6471AA28224FF3F8002A758A /* Models */,
 				6471A9FA224FF231002A758A /* AppDelegate.swift */,
-				6471A9FC224FF231002A758A /* ViewController.swift */,
-				6471A9FE224FF231002A758A /* Main.storyboard */,
 				6471AA01224FF233002A758A /* Assets.xcassets */,
 				6471AA03224FF233002A758A /* LaunchScreen.storyboard */,
 				6471AA06224FF233002A758A /* Info.plist */,
@@ -123,6 +125,36 @@
 				6471AA1C224FF233002A758A /* Info.plist */,
 			);
 			path = KvizoramaUITests;
+			sourceTree = "<group>";
+		};
+		6471AA28224FF3F8002A758A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6471AA29224FF3FF002A758A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		6471AA2A224FF41A002A758A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6471AA3122502078002A758A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6471AA3622502460002A758A /* QuizViewController.swift */,
+				6471AA3722502460002A758A /* QuizViewController.xib */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,7 +237,7 @@
 				};
 			};
 			buildConfigurationList = 6471A9F2224FF231002A758A /* Build configuration list for PBXProject "Kvizorama" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -231,7 +263,7 @@
 			files = (
 				6471AA05224FF233002A758A /* LaunchScreen.storyboard in Resources */,
 				6471AA02224FF233002A758A /* Assets.xcassets in Resources */,
-				6471AA00224FF231002A758A /* Main.storyboard in Resources */,
+				6471AA3922502460002A758A /* QuizViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,8 +288,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6471A9FD224FF231002A758A /* ViewController.swift in Sources */,
 				6471A9FB224FF231002A758A /* AppDelegate.swift in Sources */,
+				6471AA3822502460002A758A /* QuizViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,14 +325,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		6471A9FE224FF231002A758A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6471A9FF224FF231002A758A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		6471AA03224FF233002A758A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -435,6 +459,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 747J3LGUL4;
 				INFOPLIST_FILE = Kvizorama/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -442,7 +467,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = fer.Kvizorama;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -453,6 +478,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 747J3LGUL4;
 				INFOPLIST_FILE = Kvizorama/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -460,7 +486,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = fer.Kvizorama;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

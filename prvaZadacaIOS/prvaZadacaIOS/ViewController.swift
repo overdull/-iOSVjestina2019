@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  Kvizorama
+//  prvaZadacaIOS
 //
 //  Created by Borna Kovacevic on 30/03/2019.
 //  Copyright © 2019 Borna Kovacevic. All rights reserved.
