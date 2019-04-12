@@ -27,6 +27,8 @@ class QuestionView: UIView {
     @IBAction func firstButtonTapped(_ sender: UIButton) {
         if(correctAnswer == 0){
             firstButtonText.backgroundColor = UIColor.green
+        }else{
+            firstButtonText.backgroundColor = UIColor.red
         }
     }
     
@@ -34,83 +36,63 @@ class QuestionView: UIView {
     @IBAction func secondButtonTapped(_ sender: UIButton) {
         if(correctAnswer == 1){
             seccondButtonText.backgroundColor = UIColor.green
+        }else{
+            seccondButtonText.backgroundColor = UIColor.red
         }
     }
     
     @IBAction func thirdButtonTapped(_ sender: UIButton) {
         if(correctAnswer == 2){
             thirdButtonText.backgroundColor = UIColor.green
+        }else{
+            thirdButtonText.backgroundColor = UIColor.red
         }
     }
     
     @IBAction func fourthButtonTapped(_ sender: UIButton) {
         if(correctAnswer == 3){
             fourthButtonText.backgroundColor = UIColor.green
+        }else{
+            fourthButtonText.backgroundColor = UIColor.red
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    // Slijede nam dva init-a, prvi se poziva kada inicijaliziramo CustomView iz koda, a drugi kada ga inicijaliziramo iz .xib datoteke
-    
-    // Ovaj init prima pravokutnik u kojem ce se ovaj CustomView iscrtati
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
-        let quizNumber = 0
-        let questionNumber = 3
-        
-        // ovdje u init-u inicijaliziramo i konfiguriramo subview-ove CustomView-a
-//        label = UILabel(frame: CGRect(origin: CGPoint(x: 10, y: 10), size: CGSize(width: 40, height: 40)))
-        
+        let quizNumber = 1
+        let questionNumber = 9
         let urlString = "https://iosquiz.herokuapp.com/api/quizzes"
-        
-        // stvaramo jedan CountryService objekt
         let questionService = QuestionServices()
         
-        // i pozivamo njegovu funckiju fetchCountry()
-        // Ta funckija prima string s kojeg treba dohvatiti sadrzaj (json drzave) i blok koda koji zelimo da se izvrsi kada se dohvati taj sadrzaj
+       
         questionService.fetchQuestion(urlString: urlString) { (quizzes) in
-            // ovdje moramo izvrsiti ovaj kod na main dretvi, vise o tome u iducim predavanjima
             DispatchQueue.main.async {
                 if let quizzes = quizzes {
                     self.correctAnswer = quizzes.quiz[quizNumber].questionList[questionNumber].correctAnswer
-                   // print(quizzes.quiz[0].questionList[0].answers[0])
+       
                     self.QuestionText.text = quizzes.quiz[quizNumber].questionList[questionNumber].question
+                   self.QuestionText.isHidden = false
                     self.firstButtonText.setTitle(quizzes.quiz[quizNumber].questionList[questionNumber].answers[0], for: .normal)
+                    self.firstButtonText.isHidden = false
+                    
                     self.seccondButtonText.setTitle(quizzes.quiz[quizNumber].questionList[questionNumber].answers[1], for: .normal)
+                    self.seccondButtonText.isHidden = false
                     self.thirdButtonText.setTitle(quizzes.quiz[quizNumber].questionList[questionNumber].answers[2], for: .normal)
+                    self.thirdButtonText.isHidden = false
                     self.fourthButtonText.setTitle(quizzes.quiz[quizNumber].questionList[questionNumber].answers[3], for: .normal)
+                    self.fourthButtonText.isHidden = false
                 }
             }
         }
-        
-        
-        
-        
     }
     
-    // Ovaj init se poziva kada se CustomView inicijalizira iz .xib datoteke
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-//        
-//        label = UILabel(frame: CGRect(origin: CGPoint(x: 10, y: 10), size: CGSize(width: 40, height: 40)))
-//        label?.text = "text"
-//        label?.backgroundColor = UIColor.blue
-//        
-//        if let label = label {
-//            self.addSubview(label)
-//        }
-
     }
     func setup(){
         view = loadViewFromNib()
         view.frame = self.bounds
-        
         addSubview(view)
     }
     func loadViewFromNib() -> UIView {
@@ -118,7 +100,6 @@ class QuestionView: UIView {
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "QuestionView1", bundle: bundle)
         return nib.instantiate(withOwner: self, options: nil).first as! UIView
-        
     }
 
 }

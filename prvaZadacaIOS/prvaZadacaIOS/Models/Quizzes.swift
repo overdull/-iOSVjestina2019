@@ -14,9 +14,6 @@ class Quizzes  {
     let category: String
     let level: Int
     let imageUrl: String
-    
-    
-    
     let questionList: [Question] 
     
     init(idQuizz: Int, title: String,description: String, category: String,level: Int, imageUrl: String, questionList: [Question]) {

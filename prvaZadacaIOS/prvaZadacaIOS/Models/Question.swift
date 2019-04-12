@@ -13,8 +13,6 @@ class Question  {
     let answers: [String]
     let correctAnswer: Int
     
-    // failable konstruktor koji prima json
-    
     init(id: Int, question: String, answers: [String],correctAnswer: Int) {
         self.id = id
         self.question = question
