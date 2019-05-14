@@ -16,6 +16,8 @@ class QuestionServices{
                 if let data = data {
                     do {
                         let json = try JSONSerialization.jsonObject(with: data, options: [])
+//                        let quizzes = json["quizzes"] as?
+//                        [Quiz]
                         let quizzes = FetchQuizzes(json: json as! [String : AnyObject])
                         completion(quizzes)
                     } catch {

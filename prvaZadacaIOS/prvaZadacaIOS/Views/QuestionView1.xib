@@ -9,15 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuestionView" customModule="prvaZadacaIOS" customModuleProvider="target">
-            <connections>
-                <outlet property="QuestionText" destination="lVK-7N-A8y" id="nwc-1P-dxA"/>
-                <outlet property="firstButtonText" destination="Ymt-la-0AZ" id="fMr-jk-opq"/>
-                <outlet property="fourthButtonText" destination="cvB-Mv-DtT" id="N0t-IP-GtQ"/>
-                <outlet property="seccondButtonText" destination="WgL-3K-7bf" id="fsO-LD-tyZ"/>
-                <outlet property="thirdButtonText" destination="Dww-Y9-huR" id="3sv-6e-LHT"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="QuestionView" customModule="prvaZadacaIOS" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="424"/>
@@ -36,28 +28,28 @@
                     <rect key="frame" x="50" y="130" width="275" height="30"/>
                     <state key="normal" title="Prvo pitanje"/>
                     <connections>
-                        <action selector="firstButtonTapped:" destination="-1" eventType="touchUpInside" id="kVe-4g-izj"/>
+                        <action selector="firstButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="Wfh-Yq-ht7"/>
                     </connections>
                 </button>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WgL-3K-7bf">
                     <rect key="frame" x="50" y="170" width="275" height="30"/>
                     <state key="normal" title="Drugo pitanje pitanja"/>
                     <connections>
-                        <action selector="secondButtonTapped:" destination="-1" eventType="touchUpInside" id="rP6-vc-INl"/>
+                        <action selector="secondButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="pFV-Ql-Gs0"/>
                     </connections>
                 </button>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dww-Y9-huR">
                     <rect key="frame" x="50" y="210" width="275" height="30"/>
                     <state key="normal" title="Trece Pitanje pitanja"/>
                     <connections>
-                        <action selector="thirdButtonTapped:" destination="-1" eventType="touchUpInside" id="WPu-hu-AFQ"/>
+                        <action selector="thirdButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="QY0-Od-9aE"/>
                     </connections>
                 </button>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvB-Mv-DtT">
                     <rect key="frame" x="50" y="250" width="275" height="30"/>
                     <state key="normal" title="Cetvrto pitanje"/>
                     <connections>
-                        <action selector="fourthButtonTapped:" destination="-1" eventType="touchUpInside" id="M9g-MR-NH6"/>
+                        <action selector="fourthButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="Hof-TF-h4o"/>
                     </connections>
                 </button>
             </subviews>
@@ -86,6 +78,13 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="QuestionText" destination="lVK-7N-A8y" id="qTz-lN-Rhh"/>
+                <outlet property="firstButtonText" destination="Ymt-la-0AZ" id="yZ5-Jj-X5S"/>
+                <outlet property="fourthButtonText" destination="cvB-Mv-DtT" id="0a3-Qa-lJD"/>
+                <outlet property="seccondButtonText" destination="WgL-3K-7bf" id="EAY-G2-RYK"/>
+                <outlet property="thirdButtonText" destination="Dww-Y9-huR" id="bAD-0Q-fPQ"/>
+            </connections>
             <point key="canvasLocation" x="-275" y="-42"/>
         </view>
     </objects>

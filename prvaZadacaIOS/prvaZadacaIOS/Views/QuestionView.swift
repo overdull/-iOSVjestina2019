@@ -14,6 +14,8 @@ class QuestionView: UIView {
     
     var label: UILabel?
     
+    var question: Question?
+    
     @IBOutlet weak var QuestionText: UILabel!
     
     @IBOutlet weak var firstButtonText: UIButton!
@@ -59,8 +61,8 @@ class QuestionView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
-        let quizNumber = 1
-        let questionNumber = 9
+        let quizNumber = 2
+        let questionNumber = 4
         let urlString = "https://iosquiz.herokuapp.com/api/quizzes"
         let questionService = QuestionServices()
         
@@ -89,6 +91,9 @@ class QuestionView: UIView {
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        
+        
+        
     }
     func setup(){
         view = loadViewFromNib()

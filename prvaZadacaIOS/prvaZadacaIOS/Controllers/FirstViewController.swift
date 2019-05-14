@@ -21,6 +21,11 @@ class FirstViewController: UIViewController {
     @IBAction func fetchButton(_ sender: Any) {
         if(!fetchQuestions()){
             addCustomView()
+            if let customView2 = Bundle.main.loadNibNamed("QuestionView1", owner: nil, options: [:])?.first as? QuestionView {
+                print(customView2)
+//                customViewContainer.addSubview(customView2) // zakomentirano jer vec dodajemo gore CustomView stvoren bez .xiba
+            }
+
         }
     }
     enum CategoryColor: String {
@@ -46,6 +51,19 @@ class FirstViewController: UIViewController {
         
         questionService.fetchQuestion(urlString: urlString) { (quizzes) in
 
+//            let bundle = Bundle(for: type(of: self))
+//            let nib = UINib(nibName: "QuestionView1", bundle: bundle)
+//            let view = nib.instantiate(withOwner: self, options: nil).first as! QuestionView
+//
+//
+//            let customView = QuestionView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: QuestionViewFrame.bounds.size.width, height: QuestionViewFrame.bounds.size.height)))
+//            QuestionViewFrame.addSubview(customView)
+//            QuestionViewFrame.isHidden = false
+
+//            customView.firstButtonText.titleLabel?.text =
+            
+//            customView.question =
+            
              var num = 0
              DispatchQueue.main.async {
                 if let quizzes = quizzes {
