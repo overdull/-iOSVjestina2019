@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        let vc = FirstViewController()
+        let vc = LoginController()
                 
         window?.rootViewController = vc
         

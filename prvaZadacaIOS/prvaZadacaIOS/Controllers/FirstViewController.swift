@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 class FirstViewController: UIViewController {
-
+    var fetchedQuizzes: FetchedQuizzes!
     
     @IBOutlet weak var errorMessage: UILabel!
     @IBOutlet weak var quizImage: UIImageView!
@@ -20,12 +20,7 @@ class FirstViewController: UIViewController {
     
     @IBAction func fetchButton(_ sender: Any) {
         if(!fetchQuestions()){
-            addCustomView()
-            if let customView2 = Bundle.main.loadNibNamed("QuestionView1", owner: nil, options: [:])?.first as? QuestionView {
-                print(customView2)
-//                customViewContainer.addSubview(customView2) // zakomentirano jer vec dodajemo gore CustomView stvoren bez .xiba
-            }
-
+            //addCustomView()
         }
     }
     enum CategoryColor: String {
@@ -50,23 +45,11 @@ class FirstViewController: UIViewController {
         var errorOccured = false
         
         questionService.fetchQuestion(urlString: urlString) { (quizzes) in
-
-//            let bundle = Bundle(for: type(of: self))
-//            let nib = UINib(nibName: "QuestionView1", bundle: bundle)
-//            let view = nib.instantiate(withOwner: self, options: nil).first as! QuestionView
-//
-//
-//            let customView = QuestionView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: QuestionViewFrame.bounds.size.width, height: QuestionViewFrame.bounds.size.height)))
-//            QuestionViewFrame.addSubview(customView)
-//            QuestionViewFrame.isHidden = false
-
-//            customView.firstButtonText.titleLabel?.text =
-            
-//            customView.question =
-            
+            self.fetchedQuizzes = quizzes
              var num = 0
              DispatchQueue.main.async {
                 if let quizzes = quizzes {
+                   
                     for object in quizzes.quiz{
                         num = num + object.questionList.filter{$0.question.contains("NBA")}.count
                         print(object.title)
@@ -98,15 +81,18 @@ class FirstViewController: UIViewController {
                     errorOccured = true
                     self.numberOfQuestions.text = "Fun fact"
                 }
+            self.addCustomView()
             }
         }
+        
         return errorOccured
     }
     
     
     func addCustomView() {
        
-        let customView = QuestionView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: QuestionViewFrame.bounds.size.width, height: QuestionViewFrame.bounds.size.height)))
+        let customView = QuestionView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: QuestionViewFrame.bounds.size.width, height: QuestionViewFrame.bounds.size.height)),fetchedQuizzes: self.fetchedQuizzes)
+        
         QuestionViewFrame.addSubview(customView)
         QuestionViewFrame.isHidden = false
     }

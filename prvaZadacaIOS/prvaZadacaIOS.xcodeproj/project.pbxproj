@@ -14,13 +14,20 @@
 		647159DC225D253B007B8F73 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647159DB225D253B007B8F73 /* ImageService.swift */; };
 		6471AA4722502948002A758A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6471AA4622502948002A758A /* AppDelegate.swift */; };
 		6471AA4922502948002A758A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6471AA4822502948002A758A /* ViewController.swift */; };
-		6471AA4E22502949002A758A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6471AA4D22502949002A758A /* Assets.xcassets */; };
 		6471AA5122502949002A758A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6471AA4F22502949002A758A /* LaunchScreen.storyboard */; };
 		6471AA5C22502949002A758A /* prvaZadacaIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6471AA5B22502949002A758A /* prvaZadacaIOSTests.swift */; };
 		6471AA6722502949002A758A /* prvaZadacaIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6471AA6622502949002A758A /* prvaZadacaIOSUITests.swift */; };
 		6471AA7722502974002A758A /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6471AA7522502974002A758A /* FirstViewController.swift */; };
 		6471AA7822502974002A758A /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6471AA7622502974002A758A /* FirstViewController.xib */; };
-		649A7263225A95640048CAC6 /* FetchQuizzes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649A7262225A95640048CAC6 /* FetchQuizzes.swift */; };
+		64741F98228893F300346298 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64741F96228893F300346298 /* LoginController.swift */; };
+		64741F99228893F300346298 /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64741F97228893F300346298 /* LoginController.xib */; };
+		64741F9B2288B7CE00346298 /* TableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64741F9A2288B7CE00346298 /* TableCellView.swift */; };
+		64741F9D2288B7EC00346298 /* TableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64741F9C2288B7EC00346298 /* TableCellView.xib */; };
+		64741F9F228B48E700346298 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64741F9E228B48E700346298 /* LoginService.swift */; };
+		64741FA1228B7A7900346298 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64741FA0228B7A7900346298 /* Assets.xcassets */; };
+		64741FA4228B7B6900346298 /* ListOfQuizesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64741FA2228B7B6900346298 /* ListOfQuizesViewController.swift */; };
+		64741FA5228B7B6900346298 /* ListOfQuizesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64741FA3228B7B6900346298 /* ListOfQuizesViewController.xib */; };
+		649A7263225A95640048CAC6 /* FetchedQuizzes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649A7262225A95640048CAC6 /* FetchedQuizzes.swift */; };
 		649B654C225B689400A0A15B /* QuestionView1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 649B654B225B689400A0A15B /* QuestionView1.xib */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +57,6 @@
 		6471AA4322502948002A758A /* prvaZadacaIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = prvaZadacaIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6471AA4622502948002A758A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6471AA4822502948002A758A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6471AA4D22502949002A758A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6471AA5022502949002A758A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6471AA5222502949002A758A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6471AA5722502949002A758A /* prvaZadacaIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = prvaZadacaIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,7 +67,15 @@
 		6471AA6822502949002A758A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6471AA7522502974002A758A /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		6471AA7622502974002A758A /* FirstViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstViewController.xib; sourceTree = "<group>"; };
-		649A7262225A95640048CAC6 /* FetchQuizzes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchQuizzes.swift; sourceTree = "<group>"; };
+		64741F96228893F300346298 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		64741F97228893F300346298 /* LoginController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
+		64741F9A2288B7CE00346298 /* TableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellView.swift; sourceTree = "<group>"; };
+		64741F9C2288B7EC00346298 /* TableCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableCellView.xib; sourceTree = "<group>"; };
+		64741F9E228B48E700346298 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		64741FA0228B7A7900346298 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		64741FA2228B7B6900346298 /* ListOfQuizesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfQuizesViewController.swift; sourceTree = "<group>"; };
+		64741FA3228B7B6900346298 /* ListOfQuizesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListOfQuizesViewController.xib; sourceTree = "<group>"; };
+		649A7262225A95640048CAC6 /* FetchedQuizzes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedQuizzes.swift; sourceTree = "<group>"; };
 		649B654B225B689400A0A15B /* QuestionView1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionView1.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,9 +133,9 @@
 				6471AA7422502959002A758A /* Controllers */,
 				6471AA4622502948002A758A /* AppDelegate.swift */,
 				6471AA4822502948002A758A /* ViewController.swift */,
-				6471AA4D22502949002A758A /* Assets.xcassets */,
 				6471AA4F22502949002A758A /* LaunchScreen.storyboard */,
 				6471AA5222502949002A758A /* Info.plist */,
+				64741FA0228B7A7900346298 /* Assets.xcassets */,
 			);
 			path = prvaZadacaIOS;
 			sourceTree = "<group>";
@@ -149,6 +163,10 @@
 			children = (
 				6471AA7522502974002A758A /* FirstViewController.swift */,
 				6471AA7622502974002A758A /* FirstViewController.xib */,
+				64741F96228893F300346298 /* LoginController.swift */,
+				64741F97228893F300346298 /* LoginController.xib */,
+				64741FA2228B7B6900346298 /* ListOfQuizesViewController.swift */,
+				64741FA3228B7B6900346298 /* ListOfQuizesViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -158,6 +176,7 @@
 			children = (
 				643762372251148300438A4F /* QuestionServices.swift */,
 				647159DB225D253B007B8F73 /* ImageService.swift */,
+				64741F9E228B48E700346298 /* LoginService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -167,6 +186,8 @@
 			children = (
 				6437622F22510FFD00438A4F /* QuestionView.swift */,
 				649B654B225B689400A0A15B /* QuestionView1.xib */,
+				64741F9A2288B7CE00346298 /* TableCellView.swift */,
+				64741F9C2288B7EC00346298 /* TableCellView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -176,7 +197,7 @@
 			children = (
 				64376233225111E800438A4F /* Question.swift */,
 				643762352251129E00438A4F /* Quizzes.swift */,
-				649A7262225A95640048CAC6 /* FetchQuizzes.swift */,
+				649A7262225A95640048CAC6 /* FetchedQuizzes.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -287,8 +308,11 @@
 			files = (
 				649B654C225B689400A0A15B /* QuestionView1.xib in Resources */,
 				6471AA5122502949002A758A /* LaunchScreen.storyboard in Resources */,
-				6471AA4E22502949002A758A /* Assets.xcassets in Resources */,
+				64741FA5228B7B6900346298 /* ListOfQuizesViewController.xib in Resources */,
+				64741F99228893F300346298 /* LoginController.xib in Resources */,
 				6471AA7822502974002A758A /* FirstViewController.xib in Resources */,
+				64741FA1228B7A7900346298 /* Assets.xcassets in Resources */,
+				64741F9D2288B7EC00346298 /* TableCellView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,15 +337,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64741FA4228B7B6900346298 /* ListOfQuizesViewController.swift in Sources */,
 				643762382251148300438A4F /* QuestionServices.swift in Sources */,
 				64376234225111E800438A4F /* Question.swift in Sources */,
 				647159DC225D253B007B8F73 /* ImageService.swift in Sources */,
-				649A7263225A95640048CAC6 /* FetchQuizzes.swift in Sources */,
+				649A7263225A95640048CAC6 /* FetchedQuizzes.swift in Sources */,
 				6437623022510FFD00438A4F /* QuestionView.swift in Sources */,
 				6471AA7722502974002A758A /* FirstViewController.swift in Sources */,
 				6471AA4922502948002A758A /* ViewController.swift in Sources */,
+				64741F9F228B48E700346298 /* LoginService.swift in Sources */,
 				6471AA4722502948002A758A /* AppDelegate.swift in Sources */,
 				643762362251129E00438A4F /* Quizzes.swift in Sources */,
+				64741F98228893F300346298 /* LoginController.swift in Sources */,
+				64741F9B2288B7CE00346298 /* TableCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

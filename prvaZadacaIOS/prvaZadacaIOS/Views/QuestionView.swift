@@ -11,10 +11,8 @@ import UIKit
 class QuestionView: UIView {
     var correctAnswer = -1
     var view: UIView!
-    
+    var fetchedQuizzes = FetchedQuizzes()
     var label: UILabel?
-    
-    var question: Question?
     
     @IBOutlet weak var QuestionText: UILabel!
     
@@ -58,42 +56,35 @@ class QuestionView: UIView {
             fourthButtonText.backgroundColor = UIColor.red
         }
     }
-    override init(frame: CGRect) {
+    init(frame: CGRect,fetchedQuizzes: FetchedQuizzes) {
         super.init(frame: frame)
         setup()
-        let quizNumber = 2
-        let questionNumber = 4
-        let urlString = "https://iosquiz.herokuapp.com/api/quizzes"
-        let questionService = QuestionServices()
+        self.fetchedQuizzes = fetchedQuizzes
+        let quizNumber = 1
+        let questionNumber = 9
+      
         
        
-        questionService.fetchQuestion(urlString: urlString) { (quizzes) in
-            DispatchQueue.main.async {
-                if let quizzes = quizzes {
-                    self.correctAnswer = quizzes.quiz[quizNumber].questionList[questionNumber].correctAnswer
-       
-                    self.QuestionText.text = quizzes.quiz[quizNumber].questionList[questionNumber].question
-                   self.QuestionText.isHidden = false
-                    self.firstButtonText.setTitle(quizzes.quiz[quizNumber].questionList[questionNumber].answers[0], for: .normal)
-                    self.firstButtonText.isHidden = false
-                    
-                    self.seccondButtonText.setTitle(quizzes.quiz[quizNumber].questionList[questionNumber].answers[1], for: .normal)
-                    self.seccondButtonText.isHidden = false
-                    self.thirdButtonText.setTitle(quizzes.quiz[quizNumber].questionList[questionNumber].answers[2], for: .normal)
-                    self.thirdButtonText.isHidden = false
-                    self.fourthButtonText.setTitle(quizzes.quiz[quizNumber].questionList[questionNumber].answers[3], for: .normal)
-                    self.fourthButtonText.isHidden = false
-                }
-            }
-        }
+      
+        self.correctAnswer = self.fetchedQuizzes.quiz[quizNumber].questionList[questionNumber].correctAnswer
+
+        self.QuestionText.text = self.fetchedQuizzes.quiz[quizNumber].questionList[questionNumber].question
+       self.QuestionText.isHidden = false
+        self.firstButtonText.setTitle(self.fetchedQuizzes.quiz[quizNumber].questionList[questionNumber].answers[0], for: .normal)
+        self.firstButtonText.isHidden = false
+        
+        self.seccondButtonText.setTitle(self.fetchedQuizzes.quiz[quizNumber].questionList[questionNumber].answers[1], for: .normal)
+        self.seccondButtonText.isHidden = false
+        self.thirdButtonText.setTitle(self.fetchedQuizzes.quiz[quizNumber].questionList[questionNumber].answers[2], for: .normal)
+        self.thirdButtonText.isHidden = false
+        self.fourthButtonText.setTitle(self.fetchedQuizzes.quiz[quizNumber].questionList[questionNumber].answers[3], for: .normal)
+        self.fourthButtonText.isHidden = false
+
     }
     
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
-        
-        
     }
     func setup(){
         view = loadViewFromNib()

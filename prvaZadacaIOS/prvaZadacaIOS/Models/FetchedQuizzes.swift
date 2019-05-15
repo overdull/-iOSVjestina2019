@@ -7,9 +7,11 @@
 //
 
 import Foundation
-class FetchQuizzes  {
+class FetchedQuizzes  {
     var quiz: [Quizzes] = []
-    
+    init() {
+        
+    }
     init?(json: [String:AnyObject]) {
         
         

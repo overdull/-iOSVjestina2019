@@ -8,7 +8,7 @@
 
 import Foundation
 class QuestionServices{
-    func fetchQuestion(urlString: String, completion: @escaping ((FetchQuizzes?) -> Void)) {
+    func fetchQuestion(urlString: String, completion: @escaping ((FetchedQuizzes?) -> Void)) {
         
         if let url = URL(string: urlString) {
             let request = URLRequest(url: url)
@@ -16,9 +16,7 @@ class QuestionServices{
                 if let data = data {
                     do {
                         let json = try JSONSerialization.jsonObject(with: data, options: [])
-//                        let quizzes = json["quizzes"] as?
-//                        [Quiz]
-                        let quizzes = FetchQuizzes(json: json as! [String : AnyObject])
+                        let quizzes = FetchedQuizzes(json: json as! [String : AnyObject])
                         completion(quizzes)
                     } catch {
                         completion(nil)
