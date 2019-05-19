@@ -39,15 +39,18 @@ class ListOfQuizesViewController: UIViewController {
         //tableView.delegate = self
         //tableView.dataSource = self
         tableView.delegate = self
-        tableView.dataSource = self
+        //tableView.dataSource = self
         tableView.separatorStyle = .none
         
         // UIRefreshControl je jos jedna vrsta UIView-a koju za property moze imati UITableView.
         // Dodavanjem RefreshCotnrol na tableView, dodajemo pull-to-refresh opciju u tableView
         // Na refreshControl mozemo vezati target-action koji ce se izvrsiti kada korisnik napravi pull-to-refresh
-        refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(ListOfQuizesViewController.refresh), for: UIControl.Event.valueChanged)
-        tableView.refreshControl = refreshControl
+        
+        
+//        refreshControl = UIRefreshControl()
+//        refreshControl.addTarget(self, action: #selector(ListOfQuizesViewController.refresh), for: UIControl.Event.valueChanged)
+//        tableView.refreshControl = refreshControl
+//
         
         // Buduci da tableView reuse-a odreden skup UITableViewCell objekata za prikaz podataka, potrebno je registrirati tip podataka (razred ili nib) celija koje cemo
         // kasnije moci deque-ati (dohvatiti od tableViewa)
@@ -67,12 +70,13 @@ class ListOfQuizesViewController: UIViewController {
         //viewModel.fetchReviews {
 //            self.refresh()
 //        }
+        self.refresh()
     }
     
     @objc func refresh() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
-            self.refreshControl.endRefreshing()
+            //self.refreshControl.endRefreshing()
         }
     }
     
@@ -136,11 +140,11 @@ extension ListOfQuizesViewController: UITableViewDelegate {
     }
 }
 
-extension ListOfQuizesViewController: UITableViewDataSource {
-    
-    // Metoda UITableView dataSource-a koju UITableView zove da dobije UITableViewCell koji ce prikazati za odredeni indexPath
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+//extension ListOfQuizesViewController: UITableViewDataSource {
+//
+//    // Metoda UITableView dataSource-a koju UITableView zove da dobije UITableViewCell koji ce prikazati za odredeni indexPath
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//
         // celije 'stvaramo' metodom dequeueReusableCell koja zapravo dohvaca prvu slobodnu celiju iz skupa celija koje UITableView ima stvoreno kod sebe
 //        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! ReviewsTableViewCell
         
@@ -152,12 +156,12 @@ extension ListOfQuizesViewController: UITableViewDataSource {
 //            cell.setup(withReview: review)
         //}
         //return cell
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
+//    }
+//
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return 1
+//    }
+
     // Metode dataSource-a koju UITableView zove da dobije broj redaka koje treba prikazati u tablici
 //    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        // pitamo viewModel za broj redaka koje treba prikazati, viewModel ima informaciju o modelu, viewModel je dataSoruce ovog viewControllera
@@ -177,4 +181,4 @@ extension ListOfQuizesViewController: UITableViewDataSource {
 //        tableView.insertRows(at: [IndexPath(row: viewModel.numberOfReviews()-1, section: 0)], with: UITableView.RowAnimation.automatic)
 //    }
 
-}
+//}

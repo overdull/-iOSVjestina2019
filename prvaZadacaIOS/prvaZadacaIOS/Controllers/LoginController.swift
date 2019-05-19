@@ -18,20 +18,18 @@ class LoginController: UIViewController {
         let loginService = LoginService()
         if let username = username.text,
             let password = password.text{
-            if let value = userDefaults.string(forKey: username){
-                let loggedValue = "logged"
-                if (value == loggedValue){
-                    //prebaciti na novi view controller
-                    let secondViewController = FirstViewController(nibName: "FirstViewController", bundle: nil)
-                    self.present(secondViewController, animated: true, completion: nil)
-                }
+            if let value = userDefaults.string(forKey: "logged"){
+                //prebaciti na novi view controller
+               let secondViewController = ListOfQuizesViewController(nibName: "ListOfQuizesViewController", bundle: nil)
+                self.present(secondViewController, animated: true, completion: nil)
+                print(value)
             }else{
                 loginService.loginFunction(urlString: "https://iosquiz.herokuapp.com/api/session",username: username, password: password) { (e) in
                     DispatchQueue.main.async {
                         if let podaci = e as? [String:Any] {
                             if let message = podaci["token"]{
-                                userDefaults.set("logged", forKey: username)
-                                let secondViewController = FirstViewController(nibName: "FirstViewController", bundle: nil)
+                                userDefaults.set(username, forKey: "logged")
+                                let secondViewController = ListOfQuizesViewController(nibName: "ListOfQuizesViewController", bundle: nil)
                                 self.present(secondViewController, animated: true, completion: nil)
                             }else{
                                 print("error")
