@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TableCellView: UIView {
+class TableCellView: UITableViewCell {
 
     /*
     // Only override draw() if you perform custom drawing.
@@ -17,7 +17,7 @@ class TableCellView: UIView {
         // Drawing code
     }
     */
-   
+   let imageService = ImageService()
     @IBOutlet weak var quizImage: UIImageView!
     
     @IBOutlet weak var thirdStar: UIImageView!
@@ -32,7 +32,7 @@ class TableCellView: UIView {
         quizName.textColor = UIColor.brown
         quizDescription.font = UIFont.systemFont(ofSize: 16)
         quizDescription.textColor = UIColor.gray
-        quizDescription.numberOfLines = 30
+        quizDescription.numberOfLines = 5
     }
     
 //    override func prepareForReuse() {
@@ -50,4 +50,56 @@ class TableCellView: UIView {
 //        
 //        
 //    }
+    
+    func setup(withQuiz quiz: Quiz) {
+        quizName.text = quiz.title
+        quizDescription.text = quiz.description
+        if quiz.level >= 1{
+            self.firstStar.isHidden = false
+        }
+        if quiz.level >= 2{
+            self.secondStar.isHidden = false
+        }
+        if quiz.level >= 3{
+            self.thirdStar.isHidden = false
+        }
+        
+        
+        // Dohvacanje slike URLSession-om
+        // asinkrono dohvacamo sliku, ali buduci da se celije reuse-aju moguce je dobiti pogresne slike na celiji ovisno koliko brzo stizu odgovori sa servera
+        //        URLSession.shared.dataTask(with: review.imageUrl!) { (data, response, error) in
+        //            let image = UIImage(data: data!)
+        //            DispatchQueue.main.async {
+        //                self.reviewImageView.image = image
+        //            }
+        //            print(image)
+        //        }.resume()
+        
+        imageService.fetchQuizImage(ulrString: quiz.imageUrl){ (image) in
+            print("setting image")
+            DispatchQueue.main.async {
+                self.quizImage.image = image
+                self.quizImage.isHidden = false
+            }
+            print("image set")
+        }
+        
+        
+        // Postavljanje slike tako da odmah stvorimo sinkrono UIImage iz url-a
+        // lose jer blokira glavnu dretvu na kojoj se treba izvoditi samo UI
+        //        let data = try? Data(contentsOf: review.imageUrl!)
+        //
+        //        if let imageData = data {
+        //            let image = UIImage(data: imageData)
+        //            reviewImageView.image = image
+        //        }
+        //
+        
+        
+        // koristimo kingfisher za ispravno rukovanje slikama
+//        if
+//            let url = review.imageUrl {
+//            reviewImageView.kf.setImage(with: url)
+//        }
+    }
 }

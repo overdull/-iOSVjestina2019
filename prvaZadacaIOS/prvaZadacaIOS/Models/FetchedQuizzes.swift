@@ -8,7 +8,7 @@
 
 import Foundation
 class FetchedQuizzes  {
-    var quiz: [Quizzes] = []
+    var quiz: [Quiz] = []
     init() {
         
     }
@@ -48,7 +48,7 @@ class FetchedQuizzes  {
                     }
                     
                     //print("izaso iz for petlje")
-                    quiz.append(Quizzes(idQuizz: idQuizz, title: title, description: description, category: category,level:level, imageUrl: imageUrl,  questionList: questionList))
+                    quiz.append(Quiz(idQuizz: idQuizz, title: title, description: description, category: category,level:level, imageUrl: imageUrl,  questionList: questionList))
                 }
                 
             }

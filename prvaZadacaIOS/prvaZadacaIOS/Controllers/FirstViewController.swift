@@ -19,9 +19,16 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var numberOfQuestions: UILabel!
     
     @IBAction func fetchButton(_ sender: Any) {
-        if(!fetchQuestions()){
-            //addCustomView()
-        }
+        fetchQuestions()
+        
+    }
+    
+    var viewModel: Quiz!
+    
+    convenience init(viewModel: Quiz) {
+        self.init()
+        self.viewModel = viewModel
+        
     }
     enum CategoryColor: String {
         
@@ -37,55 +44,31 @@ class FirstViewController: UIViewController {
             }
         }
     }
-    func fetchQuestions() -> Bool{
-        let quizNumber = 2
-        let urlString = "https://iosquiz.herokuapp.com/api/quizzes"
-        let questionService = QuestionServices()
-        let imageService = ImageService()
-        var errorOccured = false
+    func fetchQuestions() {
+        //let quizNumber = 2
+        //let urlString = "https://iosquiz.herokuapp.com/api/quizzes"
+        //let questionService = QuestionServices()
+        //let imageService = ImageService()
+        //var errorOccured = false
         
-        questionService.fetchQuestion(urlString: urlString) { (quizzes) in
-            self.fetchedQuizzes = quizzes
-             var num = 0
-             DispatchQueue.main.async {
-                if let quizzes = quizzes {
-                   
-                    for object in quizzes.quiz{
-                        num = num + object.questionList.filter{$0.question.contains("NBA")}.count
-                        print(object.title)
-                        
-                    }
-                    if let colorCategory = CategoryColor(rawValue: quizzes.quiz[quizNumber].category) {
-                        print(colorCategory.description)
-                        self.quizTitle.backgroundColor = colorCategory.description
-                        self.quizImage.backgroundColor = colorCategory.description
-                    }
-                    self.quizTitle.text = quizzes.quiz[quizNumber].title
-                    self.quizTitle.isHidden = false
-                    self.numberOfQuestions.text = "\(num)"
-                    imageService.fetchQuizImage(ulrString: quizzes.quiz[quizNumber].imageUrl){ (image) in
-                        print("setting image")
-                        DispatchQueue.main.async {
-                            self.quizImage.image = image
-                            self.quizImage.isHidden = false
-                        }
-                        print("image set")
-                    }
-                    self.errorMessage.isHidden = true
-                    
-                }else{
-                    self.errorMessage.isHidden = false
-                    self.QuestionViewFrame.isHidden = true
-                    self.quizTitle.isHidden = true
-                    self.quizImage.isHidden = true
-                    errorOccured = true
-                    self.numberOfQuestions.text = "Fun fact"
-                }
-            self.addCustomView()
-            }
+        
+        
+        if let colorCategory = CategoryColor(rawValue: viewModel.category) {
+            print(colorCategory.description)
+            self.quizTitle.backgroundColor = colorCategory.description
+            self.quizImage.backgroundColor = colorCategory.description
         }
+        self.quizTitle.text = viewModel.title
+        self.quizTitle.isHidden = false
+
+        self.errorMessage.isHidden = true
         
-        return errorOccured
+    
+        //self.addCustomView()
+    
+    
+        
+        //return errorOccured
     }
     
     

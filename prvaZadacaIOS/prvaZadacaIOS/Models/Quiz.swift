@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class Quizzes  {
+class Quiz  {
     let idQuizz: Int
     let title: String
     let description: String
