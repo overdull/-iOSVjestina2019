@@ -11,7 +11,7 @@ import UIKit
 class QuestionView: UIView {
     var correctAnswer = -1
     var view: UIView!
-    var fetchedQuizzes = FetchedQuizzes()
+    //var quiz = Quiz()
     var label: UILabel?
     
     @IBOutlet weak var QuestionText: UILabel!
@@ -56,28 +56,28 @@ class QuestionView: UIView {
             fourthButtonText.backgroundColor = UIColor.red
         }
     }
-    init(frame: CGRect,fetchedQuizzes: FetchedQuizzes) {
+    init(frame: CGRect,quiz: Quiz,questionNumber: Int) {
         super.init(frame: frame)
         setup()
-        self.fetchedQuizzes = fetchedQuizzes
-        let quizNumber = 1
-        let questionNumber = 9
+        
+        
+        
       
         
        
       
-        self.correctAnswer = self.fetchedQuizzes.quiz[quizNumber].questionList[questionNumber].correctAnswer
+        self.correctAnswer = quiz.questionList[questionNumber].correctAnswer
 
-        self.QuestionText.text = self.fetchedQuizzes.quiz[quizNumber].questionList[questionNumber].question
+        self.QuestionText.text = quiz.questionList[questionNumber].question
        self.QuestionText.isHidden = false
-        self.firstButtonText.setTitle(self.fetchedQuizzes.quiz[quizNumber].questionList[questionNumber].answers[0], for: .normal)
+        self.firstButtonText.setTitle(quiz.questionList[questionNumber].answers[0], for: .normal)
         self.firstButtonText.isHidden = false
         
-        self.seccondButtonText.setTitle(self.fetchedQuizzes.quiz[quizNumber].questionList[questionNumber].answers[1], for: .normal)
+        self.seccondButtonText.setTitle(quiz.questionList[questionNumber].answers[1], for: .normal)
         self.seccondButtonText.isHidden = false
-        self.thirdButtonText.setTitle(self.fetchedQuizzes.quiz[quizNumber].questionList[questionNumber].answers[2], for: .normal)
+        self.thirdButtonText.setTitle(quiz.questionList[questionNumber].answers[2], for: .normal)
         self.thirdButtonText.isHidden = false
-        self.fourthButtonText.setTitle(self.fetchedQuizzes.quiz[quizNumber].questionList[questionNumber].answers[3], for: .normal)
+        self.fourthButtonText.setTitle(quiz.questionList[questionNumber].answers[3], for: .normal)
         self.fourthButtonText.isHidden = false
 
     }

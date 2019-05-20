@@ -13,7 +13,7 @@
             <connections>
                 <outlet property="errorMessage" destination="W0y-85-aLF" id="C7p-2W-xjL"/>
                 <outlet property="numberOfQuestions" destination="5H0-6m-jvb" id="TiE-Jx-cg2"/>
-                <outlet property="questionViewFrame" destination="HGA-tS-fod" id="xLb-dn-FEG"/>
+                <outlet property="questionViewFrame" destination="HGA-tS-fod" id="aXi-vR-HvY"/>
                 <outlet property="quizImage" destination="e2b-IT-vgp" id="lUg-j4-mKY"/>
                 <outlet property="quizTitle" destination="3Gc-63-EWD" id="48O-hp-BZc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -73,7 +73,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HGA-tS-fod">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HGA-tS-fod" customClass="UIScrollView">
                     <rect key="frame" x="40" y="315" width="334" height="371"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
